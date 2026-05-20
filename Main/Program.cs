@@ -7,7 +7,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string FilePath = "C:\\Users\\elise\\OneDrive\\УНИК\\2Курс\\2\\ЯП\\kt4\\lab10\\Main";
+        string FilePath = "C:\\Users\\elise\\OneDrive\\УНИК\\2Курс\\2\\ЯП\\kt4\\lab10\\Main\\test.txt";
         try
         {
             InputOutput.File = new StreamReader(FilePath);
@@ -20,8 +20,17 @@ internal class Program
 
         Console.WriteLine("Тест ввода-вывода");
 
-        string firstLine = InputOutput.File.ReadLine();
+        InputOutput.NextCh();
+        while (InputOutput.Ch != '0')
+        {
+            Console.WriteLine(InputOutput.Ch);
 
+            InputOutput.NextCh();
+            if (InputOutput.Ch == '0')
+            {
+                break;
+            }
+        }
 
     }
 }

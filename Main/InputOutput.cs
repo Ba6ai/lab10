@@ -50,13 +50,18 @@ namespace Compiler
             set;
         }
         static uint errCount = 0;
+        public static bool IsEoF
+        {
+            get;
+            private set;
+        } = false;
 
         static public void NextCh()
         {
-            if (positionNow.charNumber == lastInLine)
+            if (positionNow.charNumber >= lastInLine)
             {
                 ListThisLine();
-                if (errCount > 0)
+                if (err.Count > 0)
                 {
                     ListErrors();
                 }
@@ -126,7 +131,5 @@ namespace Compiler
                 err.Add(e);
             }
         }
-
-        public static bool IsEof => line == null;
     }
 }
