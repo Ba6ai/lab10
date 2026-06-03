@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|solutionrelative:main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|c:\\users\\elise\\onedrive\\\u0443\u043D\u0438\u043A\\2\u043A\u0443\u0440\u0441\\2\\\u044F\u043F\\kt4\\lab10\\main\\inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|solutionrelative:main\\inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|c:\\users\\elise\\onedrive\\\u0443\u043D\u0438\u043A\\2\u043A\u0443\u0440\u0441\\2\\\u044F\u043F\\kt4\\lab10\\main\\lexicalanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|solutionrelative:main\\lexicalanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|c:\\users\\elise\\onedrive\\\u0443\u043D\u0438\u043A\\2\u043A\u0443\u0440\u0441\\2\\\u044F\u043F\\kt4\\lab10\\main\\inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|solutionrelative:main\\inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,26 +26,26 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "LexicalAnalyzer.cs",
               "DocumentMoniker": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\LexicalAnalyzer.cs",
               "RelativeDocumentMoniker": "Main\\LexicalAnalyzer.cs",
               "ToolTip": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\LexicalAnalyzer.cs",
               "RelativeToolTip": "Main\\LexicalAnalyzer.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAkwFMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAMwG0AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T06:55:08.371Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "InputOutput.cs",
               "DocumentMoniker": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\InputOutput.cs",
               "RelativeDocumentMoniker": "Main\\InputOutput.cs",
               "ToolTip": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\InputOutput.cs",
               "RelativeToolTip": "Main\\InputOutput.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAmwI0AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T03:23:29.403Z",
               "EditorCaption": ""
@@ -58,7 +58,7 @@
               "RelativeDocumentMoniker": "Main\\Program.cs",
               "ToolTip": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\Program.cs",
               "RelativeToolTip": "Main\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBoAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T03:23:22.41Z",
               "EditorCaption": ""

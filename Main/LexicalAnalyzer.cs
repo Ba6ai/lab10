@@ -87,8 +87,8 @@ namespace Compiler
                 InputOutput.NextCh();
             }
 
-            token.LineNumber = InputOutput.positionNow.LineNumber;
-            token.CharNumber = InputOutput.positionNow.CharNumber;
+            token.LineNumber = InputOutput.PositionNow.LineNumber;
+            token.CharNumber = InputOutput.PositionNow.CharNumber;
 
             //сканировать символ
             switch (InputOutput.Ch)
@@ -107,7 +107,7 @@ namespace Compiler
                         else
                         {
                             // константа превышает предел
-                            InputOutput.Error(203, InputOutput.positionNow);
+                            InputOutput.Error(203, InputOutput.PositionNow);
                             nmb_int = 0;
                             while (InputOutput.Ch >= '0' && InputOutput.Ch <= '9')
                             {

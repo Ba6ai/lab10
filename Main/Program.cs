@@ -14,7 +14,7 @@ internal class Program
         try
         {
             InputOutput.File = new StreamReader(FilePath);
-            StreamWriter FileErrCode = new StreamWriter(outputFile);
+            //StreamWriter FileErrCode = new StreamWriter(outputFile);
 
             Console.WriteLine("Тест ввода-вывода");
 
@@ -24,17 +24,17 @@ internal class Program
             {
                 if (InputOutput.Ch == 'e')
                 {
-                    InputOutput.Error(42, InputOutput.positionNow);
+                    InputOutput.Error(42, InputOutput.PositionNow);
                 }
                 if (InputOutput.Ch == 'h')
                 {
-                    InputOutput.Error(52, InputOutput.positionNow);
+                    InputOutput.Error(52, InputOutput.PositionNow);
                 }
 
                 InputOutput.NextCh();
             }
 
-
+            /*
             Console.WriteLine("\nТест лексического анализатора");
             InputOutput.File.Close();
             InputOutput.File = new StreamReader(FilePath);
@@ -54,9 +54,9 @@ internal class Program
                 FileErrCode.Write(tokenCode + " ");
                 Console.Write(tokenCode + " ");
             }
-
+            */
             InputOutput.File.Close();
-            FileErrCode.Close();
+            //FileErrCode.Close();
         }
         catch (Exception e)
         {

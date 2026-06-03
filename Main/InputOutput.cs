@@ -16,7 +16,7 @@ namespace Compiler
             _lineNumber = ln;
             _charNumber = c;
         }
-
+        
         public uint LineNumber
         {
             get
@@ -79,74 +79,125 @@ namespace Compiler
     internal class InputOutput
     {
         const byte ERRMAX = 9;
-        public static char Ch
+
+        private static TextPosition _positionNow;
+        private static List<Err> _err;
+        private static string _line;
+        private static byte _lastInLine;
+        private static uint _errCount;
+        private static bool _IsEof;
+        static InputOutput()
         {
-            get;
-            set;
+            _positionNow = new TextPosition(0, 0);
+            _err = new List<Err>();
+            _line = "";
+            _lastInLine = 0;
+            _errCount = 0;
+            _IsEof = false;
         }
-
-        public static TextPosition positionNow = new TextPosition();
-        private static string line = "";
-        private static byte lastInLine = 0;
-
-        public static List<Err> err = new List<Err>();
 
         public static StreamReader File
         {
             get;
             set;
         }
-
-        private static uint errCount = 0;
-
+        public static char Ch
+        {
+            get;
+            set;
+        }
         public static bool IsEoF
         {
             get;
-            private set;
-        } = false;
+            set;
+        }
+        public static TextPosition PositionNow
+        {
+            get
+            {
+                return _positionNow;
+            }
+            set
+            {
+                _positionNow = value;
+            }
+        }
+        public static string Line
+        {
+            get
+            {
+                return _line;
+            }
+            set
+            {
+                _line = value;
+            }
+        }
+        public static byte LastInLine
+        {
+            get
+            {
+                return _lastInLine;
+            }
+            set
+            {
+                _lastInLine = value;
+            }
+        }
+        public static uint ErrCount
+        {
+            get
+            {
+                return _errCount;
+            }
+            set
+            {
+                _errCount = value;
+            }
+        }
 
         public static void NextCh()
         {
-            if (positionNow.CharNumber >= lastInLine)
+            if (_positionNow.CharNumber >= _lastInLine)
             {
                 ListThisLine();
-                if (err.Count > 0)
+                if (_err.Count > 0)
                 {
                     ListErrors();
                 }
                 ReadNextLine();
 
-                if (line == null)
+                if (_line == null)
                 {
                     return;
                 }
- 
-                positionNow.LineNumber = positionNow.LineNumber + 1;
-                positionNow.CharNumber = 0;
+
+                _positionNow.LineNumber ++;
+                _positionNow.CharNumber = 0;
             }
             else
             {
-                ++positionNow.CharNumber;
+                ++_positionNow.CharNumber;
             }
 
-            Ch = line[positionNow.CharNumber];
+            Ch = _line[_positionNow.CharNumber];
         }
 
         private static void ListThisLine()
         {
-            Console.WriteLine(line);
+            Console.WriteLine(_line);
         }
 
         private static void ReadNextLine()
         {
             if (!File.EndOfStream)
             {
-                line = File.ReadLine() + " ";
-                lastInLine = (byte)(line.Length - 1);
+                _line = File.ReadLine() + " ";
+                _lastInLine = (byte)(_line.Length - 1);
             }
             else
             {
-                line = null;
+                _line = null;
                 IsEoF = true;
                 End();
             }
@@ -154,16 +205,16 @@ namespace Compiler
 
         private static void End()
         {
-            Console.WriteLine($"Компиляция завершена: ошибок - {errCount}!");
+            Console.WriteLine($"Компиляция завершена: ошибок - {_errCount}!");
         }
 
         private static void ListErrors()
         {
-            int pos = $"{positionNow.LineNumber} ".Length;
+            int pos = $"{_positionNow.LineNumber} ".Length;
             string s;
-            foreach (Err item in err)
+            foreach (Err item in _err)
             {
-                ++errCount;
+                ++_errCount;
                 s = "";
 
                 while (s.Length + 2 < pos + item.ErrorPosition.CharNumber)
@@ -171,28 +222,20 @@ namespace Compiler
                     s += " ";
                 }
 
-                s += $"^ **{errCount}** ошибка код {item.ErrorCode}";
+                s += $"^ **{_errCount}** ошибка код {item.ErrorCode}";
                 Console.WriteLine(s);
             }
-            err.Clear();
+            _err.Clear();
         }
 
         public static void Error(byte errorCode, TextPosition position)
         {
             Err e;
-            if (err.Count <= ERRMAX)
+            if (_err.Count <= ERRMAX)
             {
                 e = new Err(position, errorCode);
-                err.Add(e);
+                _err.Add(e);
             }
-        }
-
-        public static void Reset()
-        {
-            IsEoF = false;
-            line = "";
-            lastInLine = 0;
-            positionNow = new TextPosition(1, 0);
         }
     }
 }
