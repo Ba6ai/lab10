@@ -8,25 +8,71 @@ namespace Compiler
 {
     struct TextPosition
     {
-        public uint lineNumber; // Номер строки
-        public byte charNumber; // Номер позиции в строке
+        private uint _lineNumber;
+        private byte _charNumber;
 
         public TextPosition(uint ln = 0, byte c = 0)
         {
-            lineNumber = ln;
-            charNumber = c;
+            _lineNumber = ln;
+            _charNumber = c;
+        }
+
+        public uint LineNumber
+        {
+            get
+            {
+                return this._lineNumber;
+            }
+            set
+            {
+                _lineNumber = value;
+            }
+        }
+        public byte CharNumber
+        {
+            get
+            {
+                return this._charNumber;
+            }
+            set
+            {
+                _charNumber = value;
+            }
         }
     }
 
     struct Err
     {
-        public TextPosition errorPosition;
-        public byte errorCode;
+        private TextPosition _errorPosition;
+        private byte _errorCode;
 
         public Err(TextPosition errorPosition, byte errorCode)
         {
-            this.errorPosition = errorPosition;
-            this.errorCode = errorCode;
+            this._errorPosition = errorPosition;
+            this._errorCode = errorCode;
+        }
+
+        public TextPosition ErrorPosition
+        {
+            get
+            {
+                return this._errorPosition;
+            }
+            set
+            {
+                _errorPosition = value;
+            }
+        }
+        public byte ErrorCode
+        {
+            get
+            {
+                return this._errorCode;
+            }
+            set
+            {
+                _errorCode = value;
+            }
         }
     }
 
@@ -38,9 +84,10 @@ namespace Compiler
             get;
             set;
         }
+
         public static TextPosition positionNow = new TextPosition();
-        static string line = "";
-        static byte lastInLine = 0;
+        private static string line = "";
+        private static byte lastInLine = 0;
 
         public static List<Err> err = new List<Err>();
 
@@ -49,16 +96,18 @@ namespace Compiler
             get;
             set;
         }
-        static uint errCount = 0;
+
+        private static uint errCount = 0;
+
         public static bool IsEoF
         {
             get;
             private set;
         } = false;
 
-        static public void NextCh()
+        public static void NextCh()
         {
-            if (positionNow.charNumber >= lastInLine)
+            if (positionNow.CharNumber >= lastInLine)
             {
                 ListThisLine();
                 if (err.Count > 0)
@@ -67,16 +116,20 @@ namespace Compiler
                 }
                 ReadNextLine();
 
-                if (line == null) return;
-
-                positionNow.lineNumber = positionNow.lineNumber + 1;
-                positionNow.charNumber = 0;
+                if (line == null)
+                {
+                    return;
+                }
+ 
+                positionNow.LineNumber = positionNow.LineNumber + 1;
+                positionNow.CharNumber = 0;
             }
             else
             {
-                ++positionNow.charNumber;
+                ++positionNow.CharNumber;
             }
-            Ch = line[positionNow.charNumber];
+
+            Ch = line[positionNow.CharNumber];
         }
 
         private static void ListThisLine()
@@ -94,29 +147,31 @@ namespace Compiler
             else
             {
                 line = null;
+                IsEoF = true;
                 End();
             }
         }
 
-        static void End()
+        private static void End()
         {
-            Console.WriteLine($"Компиляция завершена: : ошибок - {errCount}!");
+            Console.WriteLine($"Компиляция завершена: ошибок - {errCount}!");
         }
 
-        static void ListErrors()
+        private static void ListErrors()
         {
-            int pos = 6 - $"{positionNow.lineNumber} ".Length;
+            int pos = $"{positionNow.LineNumber} ".Length;
             string s;
             foreach (Err item in err)
             {
                 ++errCount;
-                s = "**";
-                if (errCount < 10) s += "0";
+                s = "";
 
-                s += $"{errCount}**";
-                while (s.Length - 1 < pos + item.errorPosition.charNumber) s += " ";
+                while (s.Length + 2 < pos + item.ErrorPosition.CharNumber)
+                {
+                    s += " ";
+                }
 
-                s += $"^ ошибка код {item.errorCode}";
+                s += $"^ **{errCount}** ошибка код {item.ErrorCode}";
                 Console.WriteLine(s);
             }
             err.Clear();
@@ -130,6 +185,14 @@ namespace Compiler
                 e = new Err(position, errorCode);
                 err.Add(e);
             }
+        }
+
+        public static void Reset()
+        {
+            IsEoF = false;
+            line = "";
+            lastInLine = 0;
+            positionNow = new TextPosition(1, 0);
         }
     }
 }
