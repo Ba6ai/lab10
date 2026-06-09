@@ -8,18 +8,17 @@ internal class Program
     private static void Main(string[] args)
     {
         string FilePath = "C:\\Users\\elise\\OneDrive\\УНИК\\2Курс\\2\\ЯП\\kt4\\lab10\\Main\\test.txt";
-        string outputFile = "C:\\Users\\elise\\OneDrive\\УНИК\\2Курс\\2\\ЯП\\kt4\\lab10\\Main\\errCode.txt";
-
+        string Stokens = "C:\\Users\\elise\\OneDrive\\УНИК\\2Курс\\2\\ЯП\\kt4\\lab10\\Main\\Tokens.txt";
 
         try
         {
             InputOutput.File = new StreamReader(FilePath);
-            //StreamWriter FileErrCode = new StreamWriter(outputFile);
+            StreamWriter FileTokens = new StreamWriter(Stokens);
 
-            Console.WriteLine("Тест ввода-вывода");
+            FileTokens.AutoFlush = true;
 
+            Console.WriteLine("ТЕСТ ВВОДА-ВЫВОДА");
             InputOutput.NextCh();
-
             while (!InputOutput.IsEoF)
             {
                 if (InputOutput.Ch == 'e')
@@ -33,30 +32,26 @@ internal class Program
 
                 InputOutput.NextCh();
             }
-
-            /*
-            Console.WriteLine("\nТест лексического анализатора");
             InputOutput.File.Close();
-            InputOutput.File = new StreamReader(FilePath);
+
+
+            Console.WriteLine("\nТЕСТ ЛЕКСИЧЕСКОГО АНАЛИЗАТОРА");
             InputOutput.Reset();
+            InputOutput.File = new StreamReader (FilePath);
             InputOutput.NextCh();
-
-            LexicalAnalyzer Analyzer = new LexicalAnalyzer();
-            while (true)
+            LexicalAnalyzer lexicalAnalyzer = new LexicalAnalyzer();
+            while (!InputOutput.IsEoF)
             {
-                byte tokenCode = Analyzer.NextSym();
+                byte tokenCode = lexicalAnalyzer.NextSym();
+                
 
-                if (tokenCode == 0)
-                {
-                    break;
-                }
-
-                FileErrCode.Write(tokenCode + " ");
+                FileTokens.Write(tokenCode + " ");
                 Console.Write(tokenCode + " ");
             }
-            */
+
+
+            FileTokens.Close();
             InputOutput.File.Close();
-            //FileErrCode.Close();
         }
         catch (Exception e)
         {

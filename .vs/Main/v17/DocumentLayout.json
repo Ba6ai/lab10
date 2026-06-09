@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|c:\\users\\elise\\onedrive\\\u0443\u043D\u0438\u043A\\2\u043A\u0443\u0440\u0441\\2\\\u044F\u043F\\kt4\\lab10\\main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|solutionrelative:main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|c:\\users\\elise\\onedrive\\\u0443\u043D\u0438\u043A\\2\u043A\u0443\u0440\u0441\\2\\\u044F\u043F\\kt4\\lab10\\main\\lexicalanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|solutionrelative:main\\lexicalanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|c:\\users\\elise\\onedrive\\\u0443\u043D\u0438\u043A\\2\u043A\u0443\u0440\u0441\\2\\\u044F\u043F\\kt4\\lab10\\main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|solutionrelative:main\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|c:\\users\\elise\\onedrive\\\u0443\u043D\u0438\u043A\\2\u043A\u0443\u0440\u0441\\2\\\u044F\u043F\\kt4\\lab10\\main\\inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|solutionrelative:main\\inputoutput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|c:\\users\\elise\\onedrive\\\u0443\u043D\u0438\u043A\\2\u043A\u0443\u0440\u0441\\2\\\u044F\u043F\\kt4\\lab10\\main\\test.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|solutionrelative:main\\test.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|c:\\users\\elise\\onedrive\\\u0443\u043D\u0438\u043A\\2\u043A\u0443\u0440\u0441\\2\\\u044F\u043F\\kt4\\lab10\\main\\tokens.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|solutionrelative:main\\tokens.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|c:\\users\\elise\\onedrive\\\u0443\u043D\u0438\u043A\\2\u043A\u0443\u0440\u0441\\2\\\u044F\u043F\\kt4\\lab10\\main\\keywords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E62574A-8736-4E3A-AA4A-08AF2AD8E193}|Main\\Main.csproj|solutionrelative:main\\keywords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,17 +34,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "Tokens.txt",
+              "DocumentMoniker": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\Tokens.txt",
+              "RelativeDocumentMoniker": "Main\\Tokens.txt",
+              "ToolTip": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\Tokens.txt",
+              "RelativeToolTip": "Main\\Tokens.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-06-09T18:46:44.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "test.txt",
+              "DocumentMoniker": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\test.txt",
+              "RelativeDocumentMoniker": "Main\\test.txt",
+              "ToolTip": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\test.txt",
+              "RelativeToolTip": "Main\\test.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-06-09T18:16:22.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "KeyWords.cs",
+              "DocumentMoniker": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\KeyWords.cs",
+              "RelativeDocumentMoniker": "Main\\KeyWords.cs",
+              "ToolTip": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\KeyWords.cs",
+              "RelativeToolTip": "Main\\KeyWords.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T17:52:49.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "LexicalAnalyzer.cs",
               "DocumentMoniker": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\LexicalAnalyzer.cs",
               "RelativeDocumentMoniker": "Main\\LexicalAnalyzer.cs",
               "ToolTip": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\LexicalAnalyzer.cs",
               "RelativeToolTip": "Main\\LexicalAnalyzer.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAMwG0AAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAYwCcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T06:55:08.371Z",
               "EditorCaption": ""
@@ -45,20 +96,20 @@
               "RelativeDocumentMoniker": "Main\\InputOutput.cs",
               "ToolTip": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\InputOutput.cs",
               "RelativeToolTip": "Main\\InputOutput.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAowAcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T03:23:29.403Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\Program.cs",
               "RelativeDocumentMoniker": "Main\\Program.cs",
               "ToolTip": "C:\\Users\\elise\\OneDrive\\\u0423\u041D\u0418\u041A\\2\u041A\u0443\u0440\u0441\\2\\\u042F\u041F\\kt4\\lab10\\Main\\Program.cs",
               "RelativeToolTip": "Main\\Program.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBoAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACoAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-27T03:23:22.41Z",
               "EditorCaption": ""

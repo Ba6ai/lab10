@@ -71,7 +71,10 @@ namespace Compiler
             repeatsy = 121,
             programsy = 122,
             functionsy = 123,
-            procedurensy = 124;
+            procedurensy = 124,
+            begin = 255;
+
+        private static readonly Keywords KeyTable = new Keywords();
 
         byte symbol;        // Код символа
         TextPosition token; // Позиция символа
@@ -90,7 +93,12 @@ namespace Compiler
             token.LineNumber = InputOutput.PositionNow.LineNumber;
             token.CharNumber = InputOutput.PositionNow.CharNumber;
 
-            //сканировать символ
+            if (InputOutput.IsEoF)
+            {
+                return 0;
+            }
+
+            // Cканировать символ
             switch (InputOutput.Ch)
             {
                 case >= '0' and <= '9':
@@ -103,10 +111,12 @@ namespace Compiler
                         if (nmb_int < maxint / 10 || (nmb_int == maxint / 10 && digit <= maxint % 10))
                         {
                             nmb_int = 10 * nmb_int + digit;
+
+                            InputOutput.NextCh();
                         }
                         else
                         {
-                            // константа превышает предел
+                            // Kонстанта превышает предел
                             InputOutput.Error(203, InputOutput.PositionNow);
                             nmb_int = 0;
                             while (InputOutput.Ch >= '0' && InputOutput.Ch <= '9')
@@ -130,11 +140,32 @@ namespace Compiler
                         name += InputOutput.Ch;
                         InputOutput.NextCh();
                     }
-                    //symbol = код идентификатора или код ключевого слова
+                    byte len = (byte)name.Length;
+
+                    if (KeyTable.Kw.TryGetValue(len, out var subDictionary) && subDictionary.TryGetValue(name, out byte keywordCode))
+                    {
+                        symbol = keywordCode;
+                    }
+                    else
+                    {
+                        symbol = ident;
+                        addrName = name;
+                    }
                     break;
-                //case '/'' :
-                //        сканировать символьную константу;
-                //    break;
+
+                case '\'' :
+                    InputOutput.NextCh();
+
+                    while (InputOutput.Ch != '\'' && InputOutput.IsEoF)
+                    {
+                        one_symbol = InputOutput.Ch;
+                        InputOutput.NextCh();
+                    }
+                    InputOutput.NextCh();
+                    
+                    symbol = 99;
+                    break;
+
                 case '<':
                     InputOutput.NextCh();
                     if (InputOutput.Ch == '=')
@@ -149,6 +180,7 @@ namespace Compiler
                         else
                             symbol = later;
                     break;
+
                 case ':':
                     InputOutput.NextCh();
                     if (InputOutput.Ch == '=')
@@ -158,10 +190,12 @@ namespace Compiler
                     else
                         symbol = colon;
                     break;
+
                 case ';':
                     symbol = semicolon;
                     InputOutput.NextCh();
                     break;
+
                 case '.':
                     InputOutput.NextCh();
                     if (InputOutput.Ch == '.')
@@ -170,12 +204,74 @@ namespace Compiler
                     }
                     else symbol = point;
                     break;
+
+                case ',':
+                    symbol = comma;
+                    InputOutput.NextCh();
+                    break;
+
+                case '=':
+                    symbol = equal;
+                    InputOutput.NextCh();
+                    break;
+
+                case '+':
+                    symbol = plus;
+                    InputOutput.NextCh();
+                    break;
+
+                case '-':
+                    symbol = minus;
+                    InputOutput.NextCh();
+                    break;
+
+                case '/':
+                    symbol = slash;
+                    InputOutput.NextCh();
+                    break;
+
+                case '(':
+                    InputOutput.NextCh();
+                    if (InputOutput.Ch == '*')
+                    {
+                        symbol = lcomment; InputOutput.NextCh();
+                    }
+                    else symbol = leftpar;
+                    break;
+
+                case ')':
+                    symbol = rightpar;
+                    InputOutput.NextCh();
+                    break;
+
+                case '[':
+                    symbol = lbracket;
+                    InputOutput.NextCh();
+                    break;
+
+                case ']':
+                    symbol = rbracket;
+                    InputOutput.NextCh();
+                    break;
+
+                case '{':
+                    symbol = flpar;
+                    InputOutput.NextCh();
+                    break;
+
+                case '}':
+                    symbol = frpar;
+                    InputOutput.NextCh();
+                    break;
+
+                default:
+                    InputOutput.NextCh();
+                    symbol = 0000;
+                    break;
             }
 
 
             return symbol;
         }
-
-
     }
 }

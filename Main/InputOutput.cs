@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Formats.Asn1;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -158,6 +159,10 @@ namespace Compiler
 
         public static void NextCh()
         {
+            if (IsEoF)
+            {
+                return;
+            }
             if (_positionNow.CharNumber >= _lastInLine)
             {
                 ListThisLine();
@@ -214,6 +219,7 @@ namespace Compiler
             string s;
             foreach (Err item in _err)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 ++_errCount;
                 s = "";
 
@@ -226,6 +232,7 @@ namespace Compiler
                 Console.WriteLine(s);
             }
             _err.Clear();
+            Console.ResetColor();
         }
 
         public static void Error(byte errorCode, TextPosition position)
@@ -236,6 +243,16 @@ namespace Compiler
                 e = new Err(position, errorCode);
                 _err.Add(e);
             }
+        }
+
+        public static void Reset()
+        {
+            IsEoF = false;
+            _line = "";
+            _lastInLine = 0;
+            _errCount = 0;
+            _err.Clear();
+            PositionNow = new TextPosition(1, 0);
         }
     }
 }

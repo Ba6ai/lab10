@@ -1,7 +1,8 @@
-hi!
-      priveet
-      hello my friends
-hy
-
-aa AA 
-	z
+program MyCompiler;
+var
+  a, b: integer;
+begin
+  a := 10;
+  if a <= b then
+    a := a + 1;
+end.
