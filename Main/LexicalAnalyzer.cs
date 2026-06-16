@@ -9,34 +9,34 @@ namespace Compiler
     internal class LexicalAnalyzer
     {
         public const byte
-            star = 21,          // *
-            slash = 60,         // /
-            equal = 16,         // =
-            comma = 20,         // ,
-            semicolon = 14,     // ;
-            colon = 5,          // :
-            point = 61,	        // .
-            arrow = 62,	        // ^
-            leftpar = 9,	    // (
-            rightpar = 4,	    // )
-            lbracket = 11,	    // [
-            rbracket = 12,	    // ]
-            flpar = 63,	        // {
-            frpar = 64,	        // }
-            later = 65,	        // <
-            greater = 66,	    // >
-            laterequal = 67,	//  <=
-            greaterequal = 68,	//  >=
-            latergreater = 69,	//  <>
-            plus = 70,	        // +
-            minus = 71,	        // –
-            lcomment = 72,	    //  (*
-            rcomment = 73,	    //  *)
-            assign = 51,	    //  :=
-            twopoints = 74,	    //  ..
-            ident = 2,	        // Идентификатор
-            floatc = 82,	    // Вещественная константа
-            intc = 15,	        // Целая константа
+            star = 21,          
+            slash = 60,         
+            equal = 16,         
+            comma = 20,         
+            semicolon = 14,     
+            colon = 5,          
+            point = 61,	        
+            arrow = 62,	        
+            leftpar = 9,	    
+            rightpar = 4,	    
+            lbracket = 11,	    
+            rbracket = 12,	    
+            flpar = 63,	        
+            frpar = 64,	        
+            later = 65,	        
+            greater = 66,	    
+            laterequal = 67,	
+            greaterequal = 68,	
+            latergreater = 69,	
+            plus = 70,	        
+            minus = 71,	        
+            lcomment = 72,	    
+            rcomment = 73,	    
+            assign = 51,	    
+            twopoints = 74,	    
+            ident = 2,	        
+            floatc = 82,	    
+            intc = 15,	        
             casesy = 31,
             elsesy = 32,
             filesy = 57,
@@ -71,17 +71,17 @@ namespace Compiler
             repeatsy = 121,
             programsy = 122,
             functionsy = 123,
-            procedurensy = 124,
-            begin = 255;
+            procedurensy = 124;
+
 
         private static readonly Keywords KeyTable = new Keywords();
 
-        byte symbol;        // Код символа
-        TextPosition token; // Позиция символа
-        string addrName;    // Адрес идентификатора в таблице имен
-        int nmb_int;        // Значение целой константы
-        float nmb_float;    // Значение вещественной константы
-        char one_symbol;    // Значение символьной константы
+        byte symbol;        
+        TextPosition token; 
+        string addrName;    
+        int nmb_int;        
+        float nmb_float;    
+        char one_symbol;    
 
         public byte NextSym()
         {
@@ -98,7 +98,7 @@ namespace Compiler
                 return 0;
             }
 
-            // Cканировать символ
+
             switch (InputOutput.Ch)
             {
                 case >= '0' and <= '9':
@@ -116,7 +116,6 @@ namespace Compiler
                         }
                         else
                         {
-                            // Kонстанта превышает предел
                             InputOutput.Error(203, InputOutput.PositionNow);
                             nmb_int = 0;
                             while (InputOutput.Ch >= '0' && InputOutput.Ch <= '9')
@@ -124,7 +123,6 @@ namespace Compiler
                                 InputOutput.NextCh();
                             }
                         }
-                        InputOutput.NextCh();
                     }
                     symbol = intc;
                     break;
@@ -153,19 +151,6 @@ namespace Compiler
                     }
                     break;
 
-                case '\'' :
-                    InputOutput.NextCh();
-
-                    while (InputOutput.Ch != '\'' && InputOutput.IsEoF)
-                    {
-                        one_symbol = InputOutput.Ch;
-                        InputOutput.NextCh();
-                    }
-                    InputOutput.NextCh();
-                    
-                    symbol = 99;
-                    break;
-
                 case '<':
                     InputOutput.NextCh();
                     if (InputOutput.Ch == '=')
@@ -179,6 +164,17 @@ namespace Compiler
                         }
                         else
                             symbol = later;
+                    break;
+
+                case '>':
+                    InputOutput.NextCh();
+                    if (InputOutput.Ch == '=')
+                    {
+                        symbol = greaterequal; 
+                        InputOutput.NextCh();
+                    }
+                    else
+                        symbol = greater;
                     break;
 
                 case ':':

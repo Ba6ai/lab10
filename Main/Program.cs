@@ -33,6 +33,7 @@ internal class Program
                 InputOutput.NextCh();
             }
             InputOutput.File.Close();
+            Console.WriteLine("Тест ввод-вывод завершён");
 
 
             Console.WriteLine("\nТЕСТ ЛЕКСИЧЕСКОГО АНАЛИЗАТОРА");
@@ -49,9 +50,22 @@ internal class Program
                 Console.Write(tokenCode + " ");
             }
 
-
             FileTokens.Close();
             InputOutput.File.Close();
+            Console.WriteLine("Тест лекс завершён");
+
+
+            Console.WriteLine("\nТЕСТ СИНТАКСИЧЕСКОГО АНАЛИЗАТОРА");
+            InputOutput.Reset();
+            InputOutput.IsEoF = false;
+            InputOutput.File = new StreamReader(FilePath);
+            InputOutput.NextCh();
+            LexicalAnalyzer lexicalAnalyzer1 = new LexicalAnalyzer();
+            SyntaxAnalyzer parser = new SyntaxAnalyzer(lexicalAnalyzer1);
+            parser.Parse();
+            InputOutput.File.Close();
+            Console.WriteLine("Тест синтакс завершён");
+
         }
         catch (Exception e)
         {

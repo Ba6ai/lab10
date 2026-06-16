@@ -23,6 +23,7 @@ namespace Compiler
             tmp["or"] = LexicalAnalyzer.orsy;
             tmp["to"] = LexicalAnalyzer.tosy;
             kw[2] = tmp;
+
             tmp = new Dictionary<string, byte>();
             tmp["end"] = LexicalAnalyzer.endsy;
             tmp["var"] = LexicalAnalyzer.varsy;
@@ -34,6 +35,7 @@ namespace Compiler
             tmp["nil"] = LexicalAnalyzer.nilsy;
             tmp["set"] = LexicalAnalyzer.setsy;
             kw[3] = tmp;
+
             tmp = new Dictionary<string, byte>();
             tmp["then"] = LexicalAnalyzer.thensy;
             tmp["else"] = LexicalAnalyzer.elsesy;
@@ -43,6 +45,7 @@ namespace Compiler
             tmp["type"] = LexicalAnalyzer.typesy;
             tmp["with"] = LexicalAnalyzer.withsy;
             kw[4] = tmp;
+
             tmp = new Dictionary<string, byte>();
             tmp["begin"] = LexicalAnalyzer.beginsy;
             tmp["while"] = LexicalAnalyzer.whilesy;
@@ -51,18 +54,22 @@ namespace Compiler
             tmp["label"] = LexicalAnalyzer.labelsy;
             tmp["until"] = LexicalAnalyzer.untilsy;
             kw[5] = tmp;
+
             tmp = new Dictionary<string, byte>();
             tmp["downto"] = LexicalAnalyzer.downtosy;
             tmp["packed"] = LexicalAnalyzer.packedsy;
             tmp["record"] = LexicalAnalyzer.recordsy;
             tmp["repeat"] = LexicalAnalyzer.repeatsy;
             kw[6] = tmp;
+            
             tmp = new Dictionary<string, byte>();
             tmp["program"] = LexicalAnalyzer.programsy;
             kw[7] = tmp;
+            
             tmp = new Dictionary<string, byte>();
             tmp["function"] = LexicalAnalyzer.functionsy;
             kw[8] = tmp;
+            
             tmp = new Dictionary<string, byte>();
             tmp["procedure"] = LexicalAnalyzer.procedurensy;
             kw[9] = tmp;

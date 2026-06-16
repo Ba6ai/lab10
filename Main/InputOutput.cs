@@ -161,6 +161,7 @@ namespace Compiler
         {
             if (IsEoF)
             {
+                Ch = '\0';
                 return;
             }
             if (_positionNow.CharNumber >= _lastInLine)
@@ -174,6 +175,7 @@ namespace Compiler
 
                 if (_line == null)
                 {
+                    Ch = '\0';
                     return;
                 }
 
@@ -247,6 +249,7 @@ namespace Compiler
 
         public static void Reset()
         {
+            Ch = ' ';
             IsEoF = false;
             _line = "";
             _lastInLine = 0;
