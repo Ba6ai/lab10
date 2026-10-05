@@ -40,7 +40,36 @@
 ### Алгоритм решения
 
 #### Синтаксический анализатор проверяет, соответствует ли последовательность токенов грамматике языка Паскаль. В работе используется метод рекурсивного спуска. Для каждой основной конструкции программы создан отдельный метод. Анализ начинается с метода Parse(), который запускает разбор программы.
-#### Основные методы синтаксического анализва: Parse() -> Program -> VarBlock -> VariableDeclaration -> TypeDeclaration -> RecordType.      Program -> CompoundStatement -> Statement -> AssigmentStatement -> Dessignator.    Statement -> WithStatement.      Statement -> CompoundStatement
+#### Последовательная работа синтаксического анализатора: 
+```
+Program
+ ↓
+VarBlock
+ ↓
+VariableDeclaration
+ ↓
+TypeDeclaration
+ ↓
+RecordType
+ ↓
+CompoundStatement
+ ↓
+Statement
+ ↓
+AssigmentStatement
+ ↓
+Dessignator
+ ↓
+Expression
+ ↓
+WithStatement
+ ↓
+CompoundStatement
+ ↓
+Statement
+ ↓
+AssigmentStatement
+```
 
 #### Program проверяет общую структуру программы: program, имя программы, ;, раздел переменных, составной оператор и .
 #### VarBlock обрабатывает раздел var, a VariableDeclaration - отдельное объявление переменных.
@@ -54,7 +83,7 @@ ident - оператор присваивания.
 ```
 #### AssigmentStatement разбирает присваивание вида `a := 10;`
 #### Dessignator позволяет использовать не только простые переменные, но и поля записей: `student.age := 20;`
-#### WithStatement student 
+#### WithStatement student - разбирает конструкцию
 ```
 with student do
 begin
