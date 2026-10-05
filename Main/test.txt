@@ -1,15 +1,16 @@
 program MyCompiler;
+
 var
-  a, b: integer;
-  student: record
-    age: integer;
-    id: integer;
-  end;
+    a, b integer;
+    student: record
+        age integer;
+        id: integer
+    end;
 begin
-  a := 10;
-  student.age := 20;
-  with student do
-  begin
-    id := 5;
-  end;
+    a = 10
+    student.age := 20;
+    with student do
+    begin
+        id := 5;
+    end;
 end.

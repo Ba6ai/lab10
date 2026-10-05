@@ -13,4 +13,3 @@ C:\Users\elise\OneDrive\УНИК\2Курс\2\ЯП\kt4\lab10\Main\obj\Debug\net8.
 C:\Users\elise\OneDrive\УНИК\2Курс\2\ЯП\kt4\lab10\Main\obj\Debug\net8.0\Main.genruntimeconfig.cache
 C:\Users\elise\OneDrive\УНИК\2Курс\2\ЯП\kt4\lab10\Main\obj\Debug\net8.0\ref\Main.dll
 C:\Users\elise\OneDrive\УНИК\2Курс\2\ЯП\kt4\lab10\Main\obj\Debug\net8.0\Main.sourcelink.json
-C:\Users\elise\OneDrive\УНИК\2Курс\2\ЯП\kt4\lab10\Main\obj\Debug\net8.0\Main.csproj.Up2Date

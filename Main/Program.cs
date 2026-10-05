@@ -8,12 +8,12 @@ internal class Program
     private static void Main(string[] args)
     {
         string FilePath = "C:\\Users\\elise\\OneDrive\\УНИК\\2Курс\\2\\ЯП\\kt4\\lab10\\Main\\test.txt";
-        string Stokens = "C:\\Users\\elise\\OneDrive\\УНИК\\2Курс\\2\\ЯП\\kt4\\lab10\\Main\\Tokens.txt";
+        string Tokens = "C:\\Users\\elise\\OneDrive\\УНИК\\2Курс\\2\\ЯП\\kt4\\lab10\\Main\\Tokens.txt";
 
         try
         {
             InputOutput.File = new StreamReader(FilePath);
-            StreamWriter FileTokens = new StreamWriter(Stokens);
+            StreamWriter FileTokens = new StreamWriter(Tokens);
 
             FileTokens.AutoFlush = true;
 
@@ -28,6 +28,10 @@ internal class Program
                 if (InputOutput.Ch == 'h')
                 {
                     InputOutput.Error(52, InputOutput.PositionNow);
+                }
+                if (InputOutput.Ch == 'p')
+                {
+                    InputOutput.Error(112, InputOutput.PositionNow);
                 }
 
                 InputOutput.NextCh();
@@ -57,7 +61,6 @@ internal class Program
 
             Console.WriteLine("\nТЕСТ СИНТАКСИЧЕСКОГО АНАЛИЗАТОРА");
             InputOutput.Reset();
-            InputOutput.IsEoF = false;
             InputOutput.File = new StreamReader(FilePath);
             InputOutput.NextCh();
             LexicalAnalyzer lexicalAnalyzer1 = new LexicalAnalyzer();
