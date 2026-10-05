@@ -43,32 +43,21 @@
 #### Последовательная работа синтаксического анализатора: 
 ```
 Program
- ↓
-VarBlock
- ↓
-VariableDeclaration
- ↓
-TypeDeclaration
- ↓
-RecordType
- ↓
-CompoundStatement
- ↓
-Statement
- ↓
-AssigmentStatement
- ↓
-Dessignator
- ↓
-Expression
- ↓
-WithStatement
- ↓
-CompoundStatement
- ↓
-Statement
- ↓
-AssigmentStatement
+├── VarBlock
+│   └── VariableDeclaration
+│       └── TypeDeclaration
+│           └── RecordType
+│
+└── CompoundStatement
+    └── Statement
+        ├── AssigmentStatement
+        │   ├── Dessignator
+        │   └── Expression
+        │
+        ├── WithStatement
+        │   └── Statement
+        │
+        └── CompoundStatement
 ```
 
 #### 1) Метод Accept() - основной метод проверки токенов. Он сравнивает текущий токен (_sym) с ожидаемым (expectedToken). Если токены совпадают, парсер переходит к следующему. Если нет - фиксируется синтаксическая ошибка и выполняется нейтрализация
@@ -86,7 +75,7 @@ begin - составной оператор (CompoundStatemen)
 with - оператор присоединения (WithStatement)
 ident - оператор присваивания (AssigmentStatement)
 ```
-#### 2.3) WithStatement() student - разбирает оператор присоединения вида with student do statement.
+#### 2.3) WithStatement() - разбирает оператор присоединения вида with student do statement.
 ```
 with student do
 begin
